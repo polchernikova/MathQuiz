@@ -5,15 +5,17 @@ import by.polchernikova.quizer.TaskGenerator;
 import java.util.*;
 
 public class GroupTaskGenerator implements TaskGenerator  {
-    GroupTaskGenerator(TaskGenerator... generators) {
-
+    public GroupTaskGenerator(TaskGenerator... generators) {
+        gens = Arrays.stream(generators).toList();
     }
 
-    GroupTaskGenerator(List<TaskGenerator> generators) {
-
+    public GroupTaskGenerator(List<TaskGenerator> generators) {
+        gens = generators;
     }
 
     public Task generate() {
-        return null;
+        return gens.get((int) (Math.random() * (gens.size()))).generate();
     }
+
+    List<TaskGenerator> gens;
 }

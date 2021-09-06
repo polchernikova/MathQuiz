@@ -4,7 +4,7 @@ import by.polchernikova.quizer.Result;
 import by.polchernikova.quizer.*;
 
 public class TextTask implements Task {
-    TextTask(String text, String answer) {
+    public TextTask(String text, String answer) {
         task = text;
         ans = answer;
     }
@@ -15,7 +15,7 @@ public class TextTask implements Task {
 
     public Result validate(String answer) {
         try {
-            int num = Integer.parseInt(answer);
+            Integer.parseInt(answer);
         } catch (NumberFormatException nfe) {
             return Result.INCORRECT_INPUT;
         }

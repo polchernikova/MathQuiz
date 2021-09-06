@@ -5,14 +5,14 @@ import by.polchernikova.quizer.TaskGenerator;
 import java.util.*;
 
 public class PoolTaskGenerator implements TaskGenerator {
-    PoolTaskGenerator(
+    public PoolTaskGenerator(
             boolean allowDuplicate,
             Task... tasks
     ) {
 
     }
 
-    PoolTaskGenerator(
+    public PoolTaskGenerator(
             boolean allowDuplicate,
             List<Task> tasks
     ) {
