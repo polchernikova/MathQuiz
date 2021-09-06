@@ -9,6 +9,6 @@ public class MathQuiz {
         System.out.println("Введите название теста...");
         Scanner reader = new Scanner(System.in);
         String test_name = reader.nextLine();
-        Quiz test = (Quiz) getQuizMap();
+        Quiz test = getQuizMap().get(test_name);
     }
 }

@@ -1,30 +1,46 @@
 package by.polchernikova.quizer;
-import java.util.*;
 
 public class Quiz {
     Quiz(TaskGenerator generator, int taskCount) {
-
+        tasksRemain = taskCount;
+        gen = generator;
     }
     Task nextTask() {
-        return null;
+        tasksRemain--;
+        currentTask = gen.generate();
+        return currentTask;
     }
     Result provideAnswer(String answer) {
-        return null;
+        Result res = currentTask.validate(answer);
+        if(res == Result.OK) {
+            correctAnswers++;
+        } else if(res == Result.WRONG) {
+            wrongAnswers++;
+        } else if(res == Result.INCORRECT_INPUT ){
+            incorrectInputAnswers++;
+        }
+        return res;
     }
     boolean isFinished() {
-        return true;
+        return tasksRemain == 0;
     }
     int getCorrectAnswerNumber() {
-        return 0;
+        return correctAnswers;
     }
     int getWrongAnswerNumber() {
-        return 0;
+        return wrongAnswers;
     }
     int getIncorrectInputNumber() {
-        return 0;
+        return incorrectInputAnswers;
     }
     double getMark() {
-        return 0;
+        return (double) (correctAnswers) /  (double) (correctAnswers + incorrectInputAnswers + wrongAnswers);
     }
+    private TaskGenerator gen;
+    private Task currentTask = null;
+    private int tasksRemain;
+    private int wrongAnswers = 0;
+    private int correctAnswers = 0;
+    private int incorrectInputAnswers = 0;
 }
 

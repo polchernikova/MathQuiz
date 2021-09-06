@@ -19,7 +19,7 @@ public class TextTask implements Task {
         } catch (NumberFormatException nfe) {
             return Result.INCORRECT_INPUT;
         }
-        if(answer == ans) {
+        if(answer.equals(ans)) {
             return Result.OK;
         } else {
             return Result.WRONG;
