@@ -10,20 +10,23 @@ public class RealEquationMathTaskGenerator extends EquationMathTaskGenerator imp
             boolean generateSum,
             boolean generateDifference,
             boolean generateMultiplication,
-            boolean generateDivision
+            boolean generateDivision,
+            int precision
     ) {
         super(generateSum, generateDifference, generateMultiplication, generateDivision);
         minNum = minNumber;
         maxNum = maxNumber;
+        maxPrecision = precision;
     }
 
     public Task generate() {
         double firstDouble = (Math.random() * (maxNum - minNum) + minNum);
         double secondDouble = (Math.random() * (maxNum - minNum) + minNum);
         int operIndex = (int)(Math.random() * operations.size());
-        return new RealEquationMathTask(firstDouble, secondDouble, operations.get(operIndex));
+        return new RealEquationMathTask(firstDouble, secondDouble, operations.get(operIndex), maxPrecision);
     }
 
     private final double minNum;
     private final double maxNum;
+    private final int maxPrecision;
 }

@@ -5,17 +5,20 @@ import by.polchernikova.quizer.Result;
 import java.util.Objects;
 
 public class RealExpressionMathTask extends ExpressionMathTask implements RealMathTask {
-    public RealExpressionMathTask(double firstArgument, double secondArgument, String oper) {
-        firstArg = firstArgument;
-        secondArg = secondArgument;
+    public RealExpressionMathTask(double firstArgument, double secondArgument, String oper, int precision) {
+        maxPrecision = precision;
+        firstArg = convertUsingPrecision(firstArgument);
+        secondArg = convertUsingPrecision(secondArgument);
         operation = oper;
     }
+
     public String getText() {
         return Double.toString(firstArg) + operation + "x=" + Double.toString(secondArg);
     }
     public String getAnswer() {
         return Double.toString(calculateAnswer());
     }
+
     public double calculateAnswer() {
         double ans;
         if (Objects.equals(operation, "+")) {
@@ -29,7 +32,7 @@ public class RealExpressionMathTask extends ExpressionMathTask implements RealMa
         } else {
             throw new NumberFormatException();
         }
-        return ans;
+        return convertUsingPrecision(ans);
     }
 
     public Result validate(String answer) {
@@ -45,6 +48,12 @@ public class RealExpressionMathTask extends ExpressionMathTask implements RealMa
             return Result.WRONG;
         }
     }
+
+    private double convertUsingPrecision(double num) {
+        return ((double) ((int)(num * Math.pow(10, maxPrecision))))/ Math.pow(10, maxPrecision);
+    }
+
+    private int maxPrecision;
     private String operation;
     private double firstArg;
     private double secondArg;
