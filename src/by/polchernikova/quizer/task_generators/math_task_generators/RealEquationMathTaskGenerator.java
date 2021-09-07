@@ -26,6 +26,13 @@ public class RealEquationMathTaskGenerator extends EquationMathTaskGenerator imp
         return new RealEquationMathTask(firstDouble, secondDouble, operations.get(operIndex), maxPrecision);
     }
 
+    public double getMinNumber() {
+        return minNum;
+    }
+    public double getMaxNumber() {
+        return maxNum;
+    }
+
     private final double minNum;
     private final double maxNum;
     private final int maxPrecision;

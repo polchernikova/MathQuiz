@@ -26,6 +26,13 @@ public class RealExpressionMathTaskGenerator extends ExpressionMathTaskGenerator
         return new RealExpressionMathTask(firstDouble, secondDouble, operations.get(operIndex), maxPrecision);
     }
 
+    public double getMinNumber() {
+        return minNum;
+    }
+    public double getMaxNumber() {
+        return maxNum;
+    }
+
     private final double minNum;
     private final double maxNum;
     private final int maxPrecision;

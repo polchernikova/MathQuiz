@@ -30,6 +30,15 @@ public class IntegerEquationMathTaskGenerator extends EquationMathTaskGenerator 
         return new IntegerEquationMathTask(firstInt, secondInt, operations.get(operIndex));
     }
 
+    public int getMinNumber() {
+        return minNum;
+    }
+
+    public int getMaxNumber() {
+        return maxNum;
+    }
+
+
     private final int minNum;
     private final int maxNum;
 }

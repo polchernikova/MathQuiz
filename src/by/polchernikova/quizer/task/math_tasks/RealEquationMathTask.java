@@ -48,7 +48,6 @@ public class RealEquationMathTask extends EquationMathTask implements RealMathTa
             return Result.WRONG;
         }
     }
-
     private double convertUsingPrecision(double num) {
         return ((double) ((int)(num * Math.pow(10, maxPrecision)))) / (double) Math.pow(10, maxPrecision);
     }
