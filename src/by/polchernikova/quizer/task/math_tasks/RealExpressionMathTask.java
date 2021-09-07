@@ -5,7 +5,7 @@ import by.polchernikova.quizer.Result;
 import java.util.Objects;
 
 public class RealExpressionMathTask extends ExpressionMathTask implements RealMathTask {
-    public RealExpressionMathTask(int firstArgument, int secondArgument, String oper) {
+    public RealExpressionMathTask(double firstArgument, double secondArgument, String oper) {
         firstArg = firstArgument;
         secondArg = secondArgument;
         operation = oper;

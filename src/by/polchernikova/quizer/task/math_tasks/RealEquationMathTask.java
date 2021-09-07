@@ -5,7 +5,7 @@ import by.polchernikova.quizer.Result;
 import java.util.Objects;
 
 public class RealEquationMathTask extends EquationMathTask implements RealMathTask {
-    public RealEquationMathTask(int firstArgument, int secondArgument, String oper) {
+    public RealEquationMathTask(double firstArgument, double secondArgument, String oper) {
         firstArg = firstArgument;
         secondArg = secondArgument;
         operation = oper;
