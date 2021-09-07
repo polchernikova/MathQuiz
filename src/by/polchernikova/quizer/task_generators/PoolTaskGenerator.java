@@ -9,17 +9,28 @@ public class PoolTaskGenerator implements TaskGenerator {
             boolean allowDuplicate,
             Task... tasks
     ) {
-
+        pool = Arrays.stream(tasks).toList();
+        allowDupl = allowDuplicate;
     }
 
     public PoolTaskGenerator(
             boolean allowDuplicate,
             List<Task> tasks
     ) {
-
+        pool = tasks;
+        allowDupl = allowDuplicate;
     }
 
     public Task generate() {
-        return null;
+        int index = (int)(Math.random() * (pool.size()));
+        if(allowDupl) {
+            return pool.get(index);
+        } else {
+            pool.remove(index);
+            return pool.get(index);
+        }
     }
+
+    List<Task> pool;
+    boolean allowDupl;
 }
