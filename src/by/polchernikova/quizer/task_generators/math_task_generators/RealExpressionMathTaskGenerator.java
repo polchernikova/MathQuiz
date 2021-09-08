@@ -14,8 +14,14 @@ public class RealExpressionMathTaskGenerator extends ExpressionMathTaskGenerator
             int precision
     ) {
         super(generateSum, generateDifference, generateMultiplication, generateDivision);
+        if(minNumber > maxNumber) {
+            throw new IllegalArgumentException("Минимальное число должно быть меньше максимального");
+        }
         minNum = minNumber;
         maxNum = maxNumber;
+        if (precision < 0) {
+            throw new IllegalArgumentException("Отрицательная точность");
+        }
         maxPrecision = precision;
     }
 

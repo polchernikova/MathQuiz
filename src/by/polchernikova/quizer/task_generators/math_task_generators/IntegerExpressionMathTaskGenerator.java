@@ -13,6 +13,9 @@ public class IntegerExpressionMathTaskGenerator extends ExpressionMathTaskGenera
             boolean generateDivision
     ) {
         super(generateSum, generateDifference, generateMultiplication, generateDivision);
+        if(minNumber > maxNumber) {
+            throw new IllegalArgumentException("Минимальное число должно быть меньше максимального");
+        }
         minNum = minNumber;
         maxNum = maxNumber;
     }
