@@ -48,7 +48,7 @@ public class IntegerExpressionMathTask extends ExpressionMathTask implements Int
         }
     }
 
-    private String operation;
-    private int firstArg;
-    private int secondArg;
+    private final String operation;
+    private final int firstArg;
+    private final int secondArg;
 }

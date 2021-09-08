@@ -48,7 +48,7 @@ public class IntegerEquationMathTask extends EquationMathTask implements Integer
         }
     }
 
-    private int firstArg;
-    private int secondArg;
-    private String operation;
+    private final int firstArg;
+    private final int secondArg;
+    private final String operation;
 }

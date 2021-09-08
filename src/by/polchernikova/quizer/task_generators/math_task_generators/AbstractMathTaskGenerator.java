@@ -2,7 +2,6 @@ package by.polchernikova.quizer.task_generators.math_task_generators;
 
 import by.polchernikova.quizer.TaskGenerator;
 import by.polchernikova.quizer.exceptions.NothingToGenerateException;
-import by.polchernikova.quizer.task.math_tasks.AbstractMathTask;
 
 import java.util.Vector;
 

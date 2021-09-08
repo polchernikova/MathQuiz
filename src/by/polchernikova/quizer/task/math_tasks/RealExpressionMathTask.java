@@ -53,8 +53,8 @@ public class RealExpressionMathTask extends ExpressionMathTask implements RealMa
         return ((double) ((int)(num * Math.pow(10, maxPrecision))))/ Math.pow(10, maxPrecision);
     }
 
-    private int maxPrecision;
-    private String operation;
-    private double firstArg;
-    private double secondArg;
+    private final int maxPrecision;
+    private final String operation;
+    private final double firstArg;
+    private final double secondArg;
 }
