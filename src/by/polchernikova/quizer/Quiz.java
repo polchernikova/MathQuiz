@@ -1,5 +1,7 @@
 package by.polchernikova.quizer;
 
+import by.polchernikova.quizer.exceptions.QuizNotFinishedException;
+
 public class Quiz {
     Quiz(TaskGenerator generator, int taskCount) {
         tasksRemain = taskCount;
@@ -16,7 +18,7 @@ public class Quiz {
             correctAnswers++;
         } else if(res == Result.WRONG) {
             wrongAnswers++;
-        } else if(res == Result.INCORRECT_INPUT ){
+        } else {
             incorrectInputAnswers++;
         }
         return res;
@@ -33,7 +35,10 @@ public class Quiz {
     int getIncorrectInputNumber() {
         return incorrectInputAnswers;
     }
-    double getMark() {
+    double getMark() throws Exception {
+        if(!isFinished()) {
+            throw new QuizNotFinishedException("Mark is required before the quiz is finished");
+        }
         return (double) (correctAnswers) /  (double) (correctAnswers + incorrectInputAnswers + wrongAnswers);
     }
     private TaskGenerator gen;

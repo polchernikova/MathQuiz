@@ -31,6 +31,6 @@ public class PoolTaskGenerator implements TaskGenerator {
         }
     }
 
-    List<Task> pool;
-    boolean allowDupl;
+    private List<Task> pool;
+    private final boolean allowDupl;
 }

@@ -12,7 +12,7 @@ public class MathQuiz {
         quizMap.put("TEST NAME 1", new Quiz(gen1, 5));
         return quizMap;
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println("Введите название теста...");
         Scanner reader = new Scanner(System.in);
         String test_name = reader.nextLine();
